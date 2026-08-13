@@ -1,0 +1,39 @@
+{% set visual = post.meta.get("featured_visual", {}) %}
+<article
+  class="qvi-featured__slide{% if feature_index == 1 %} is-active{% endif %}"
+  data-qvi-featured-slide
+  data-feature-index="{{ feature_index }}"
+  aria-hidden="{% if feature_index == 1 %}false{% else %}true{% endif %}"
+>
+  <div class="qvi-featured__meta">
+    <span>主推文章</span>
+    <time datetime="{{ post.config.date.created }}">
+      {{ post.config.date.created.strftime("%m.%d") }}
+      <small>{{ post.config.date.created.strftime("%Y") }}</small>
+    </time>
+    <div>
+      {% for category in post.categories %}
+        <span>{{ category.title }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="qvi-featured__copy">
+    <div class="qvi-featured__excerpt">{{ post.content }}</div>
+    <a href="{{ post.url | url }}" class="qvi-featured__read">阅读文章 <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <div class="qvi-featured__visual" aria-label="{{ visual.get('from', 'Browser') }} 到 {{ visual.get('to', 'Service') }} 的访问链路">
+    <div class="qvi-flow__chain">
+      <span>{{ visual.get("from", "Browser") }}</span>
+      <b aria-hidden="true">→</b>
+      <span>{{ visual.get("via", "Proxy") }}</span>
+      <b aria-hidden="true">→</b>
+      <span>{{ visual.get("to", "Service") }}</span>
+    </div>
+    <div class="qvi-flow__result" data-tone="{{ visual.get('tone', 'normal') }}">
+      <strong>{{ visual.get("status", "OK") }}</strong>
+      <p>{{ visual.get("detail", "查看文章了解完整过程") }}</p>
+    </div>
+  </div>
+</article>

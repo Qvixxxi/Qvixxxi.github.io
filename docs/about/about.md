@@ -9,7 +9,7 @@ glightbox: false
 comments: true  #默认不开启评论
 ---
 <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-# <span id="jinrishici-sentence" class="center">今日诗词</span>
+# <span id="jinrishici-sentence" class="center">今日诗词</span> {.about-hero-title}
 
 <div class="flip-container">
 <div class="image-container">
@@ -88,84 +88,45 @@ comments: true  #默认不开启评论
 
 ## 我的履历
 
-<section class="qualification section">
-    <div class="qualification__container container">
-        <div class="qualification__tabs">
-            <div class="qualification__button button--flex qualification__active" data-target='#education'>
-                <iconify-icon icon="fluent:hat-graduation-12-regular" class="qualification__icon"></iconify-icon>
-                来时路
+<section class="journey" aria-labelledby="journey-title">
+    <header class="journey__header">
+        <h2 id="journey-title">来时路</h2>
+        <p>从高中、本科到工程实践，按时间记录。</p>
+    </header>
+    <div class="journey__layout">
+      <ol class="journey__grid">
+        <li class="journey-card journey-card--school">
+            <div class="journey-card__meta">
+                <span>高中</span>
+                <time>2018-2021</time>
             </div>
-        </div>       
-        <div class="qualification__sections">
-            <!-- 教育经历时间线 -->
-            <div class="qualification__content qualification__active" data-content id="education">
-                <!-- 时间线项目 -->
-                <div class="qualification__data">
-                    <div>
-                        <h3 class="qualification__title">
-                        <a href="https://baike.baidu.com/item/%E9%87%8D%E5%BA%86%E5%B8%82%E5%9E%AB%E6%B1%9F%E5%AE%9E%E9%AA%8C%E4%B8%AD%E5%AD%A6%E6%A0%A1/19829123" target="_blank">重庆市垫江实验中学校</a>
-                        </h3>
-                        <span class="qualification__subtitle">平凡的三年</span>
-                        <div class="qualification__calendar">
-                            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
-                            <span class="qualification__date">2018 - 2021</span>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-                </div>
-                <div class="qualification__data">
-                    <div></div>
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-                    <div>
-                        <h3 class="qualification__title">
-                        <a href="https://www.cque.edu.cn/" target="_blank">CQUE</a>
-                        </h3>
-                        <span class="qualification__subtitle">计算机科学与技术专业学士</span>
-                        <div class="qualification__calendar">
-                            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
-                            <span class="qualification__date">2021 - 2024</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="qualification__data">
-                    <div>
-                        <h3 class="qualification__title">
-                        <a href="https://eie.cqu.edu.cn/index.htm" target="_blank">重庆大学国家卓越工程师学院</a>
-                        </h3>
-                        <span class="qualification__subtitle">智能网联汽车专业</span>
-                        <div class="qualification__calendar">
-                            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
-                            <span class="qualification__date">2024 - 2025</span>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-                </div>
-                <div class="qualification__data">
-                    <div></div>
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-                    <div>
-                        <h3 class="qualification__title">未完待续</h3>
-                        <span class="qualification__subtitle">于道各努力，千里自同风</span>
-                        <div class="qualification__calendar">
-                            <iconify-icon icon="tabler:calendar" aria-hidden="true"></iconify-icon>
-                            <span class="qualification__date">Before - After</span>
-                        </div>
-                    </div>
-                </div>
+            <h3><a href="https://baike.baidu.com/item/%E9%87%8D%E5%BA%86%E5%B8%82%E5%9E%AB%E6%B1%9F%E5%AE%9E%E9%AA%8C%E4%B8%AD%E5%AD%A6%E6%A0%A1/19829123" target="_blank">重庆市垫江实验中学校</a></h3>
+            <p>平凡的三年</p>
+        </li>
+        <li class="journey-card journey-card--degree">
+            <div class="journey-card__meta">
+                <span>本科</span>
+                <time>2021-2024</time>
             </div>
-        </div>
+            <h3><a href="https://www.cque.edu.cn/" target="_blank">CQUE</a></h3>
+            <p>计算机科学与技术专业学士</p>
+        </li>
+        <li class="journey-card journey-card--practice">
+            <div class="journey-card__meta">
+                <span>工程实践</span>
+                <time>2024-2025</time>
+            </div>
+            <h3><a href="https://eie.cqu.edu.cn/index.htm" target="_blank">重庆大学国家卓越工程师学院</a></h3>
+            <p>智能网联汽车专业</p>
+        </li>
+        <li class="journey-card journey-card--next">
+            <div class="journey-card__meta">
+                <span>下一站</span>
+                <time>继续更新</time>
+            </div>
+            <h3>未完待续</h3>
+            <p>于道各努力，千里自同风</p>
+        </li>
+      </ol>
     </div>
 </section>
-<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#608DBD,direction:145,strength:15)" width="100%" color=#009485 SIZE=1>

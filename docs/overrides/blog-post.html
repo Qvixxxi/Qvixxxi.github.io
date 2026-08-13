@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+
+{% block container %}
+  <div class="qvi-article" data-md-component="content">
+    <article class="qvi-article__body md-typeset">
+      <header class="qvi-article__meta">
+        <a href="{{ page.parent.url | url }}">返回文章列表</a>
+        <div>
+          <time datetime="{{ page.config.date.created }}">
+            {{ page.config.date.created | date }}
+          </time>
+          {% if page.categories %}
+            <span>
+              {% for category in page.categories %}
+                {{ category.title }}{% if loop.revindex > 1 %} / {% endif %}
+              {% endfor %}
+            </span>
+          {% endif %}
+          {% if page.config.readtime %}
+            <span>{{ page.config.readtime }} MIN READ</span>
+          {% endif %}
+        </div>
+      </header>
+
+      {% include "partials/content.html" %}
+    </article>
+
+    {% if page.toc %}
+      <aside class="qvi-article__toc">
+        <span>本页目录</span>
+        {% include "partials/toc.html" %}
+      </aside>
+    {% endif %}
+  </div>
+{% endblock %}

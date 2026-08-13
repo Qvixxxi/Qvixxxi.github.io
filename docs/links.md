@@ -1,13 +1,13 @@
-#排名不分先后，都是鸽们
+# 排名不分先后，都是鸽们 {.links-hero-title}
 
 <div class="post-body">
   <div id="links">
     <style>
       /* 友链样式 */
       :root {
-        --primary-color: #009485;
+        --primary-color: #68536f;
         --secondary-color: #f8f9fa;
-        --accent-color: #007d72;
+        --accent-color: #4f3d56;
         --text-color: #333;
         --light-text: #666;
         --border-radius: 10px;
@@ -126,7 +126,7 @@
       }
       
       .card .card-header a:hover {
-        color: #d480aa;
+        color: #59475f;
       }
       
       .card .card-header .info {
@@ -178,7 +178,7 @@
           />
           <div class="card-header">
             <div>
-              <a href="https://leeian.cn:2025/" target="_blank">Leeian's blog</a>
+              <a href="https://liwanr.com/" target="_blank">liWanr's blog</a>
             </div>
             <div class="info">人称外号小李子</div>
           </div>

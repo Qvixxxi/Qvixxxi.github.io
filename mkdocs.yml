@@ -1,6 +1,8 @@
 site_name: "Qvi' Web"
-repo_url: https://github.com/Qvidx # 右上角点击跳转的链接
-repo_name: Qvi # 右上角的名字
+site_description: "Qvi 的个人博客，记录开发、部署与日常折腾。"
+site_url: https://qvixxxi.github.io/
+repo_url: https://github.com/Qvixxxi/Qvixxxi.github.io # 右上角点击跳转的链接
+repo_name: Qvixxxi # 右上角的名字
 
 theme:
   name: material #主题名字
@@ -9,7 +11,6 @@ theme:
 
   features:
     - navigation.top                          # 返回顶部的按钮
-    - navigation.tabs                         # 导航栏
     - navigation.sections                     # 不折叠导航栏
     - navigation.expand                       # 自动打开折叠的子部分
     - navigation.path                         # 显示导航路径
@@ -17,11 +18,8 @@ theme:
     - search.highlight                        # 搜索结果高亮
     - search.share                            # 搜索共享
     - navigation.indexes  
-    - content.code.copy
-  hide:
-    - navigation
-    - toc
-
+    - content.code.copy                       #代码复制按钮
+    - toc.follow                              # 目录跟随阅读位置
   palette:
    #更改主题颜色需要下面两个模式都要改
     - scheme: default
@@ -35,6 +33,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: 切换至日间模式
+  font: false
   icon:
      repo: fontawesome/brands/github #右上角图标
      logo: image2
@@ -46,6 +45,8 @@ nav:
   - Share: 
     - 好物分享: share/share.md
     - 沉浸式翻译: share/Translate.md
+    - Docker: share/Docker.md
+    - Mkdocs: share/Mkdocs.md
   - Blog:
     - blog/index.md
   - Links:  links.md
@@ -64,18 +65,7 @@ nav:
 
 
 
-extra:
-  consent:
-    title: 🍪 Cookie 使用声明
-    description: >- 
-      我们使用 Cookie 来记录您的访问偏好，并衡量文档的有效性，帮助我们优化内容体验。
-      您的同意将有助于改进我们的文档质量。
-    actions:
-      - accept
-      - reject
-    policy:
-      name: "隐私政策"
-      link: "/privacy-policy/"
+extra: {}
   # alternate:
   #   - name: English
   #     link: /en/ 
@@ -113,7 +103,6 @@ plugins:
 
 
 extra_css:
-  - "https://static.zeoseven.com/zsft/134/main/result.css"   #字体
   - stylesheets/extra.css
   - about/style/about.css
 
@@ -123,36 +112,23 @@ extra_javascript:
 
 
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite    #支持行内代码高亮
-  - pymdownx.snippets        #支持外部 Markdown 片段导入，避免重复写相同内容。
-  - admonition               #支持创建提示框
-  - pymdownx.arithmatex:     #启用 LaTeX 数学公式 支持
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - pymdownx.arithmatex:
       generic: true
-  - footnotes                #脚注支持
-  - pymdownx.details         #折叠详情框
-  - pymdownx.superfences     #代码块增强
-  - pymdownx.mark            #高亮文本
-  - attr_list                #允许给元素添加 HTML 属性。
-  - pymdownx.emoji:          #支持表情符号
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-
-  - attr_list                #许使用网格，允许将相同或不同类型的块变成矩形
-  - md_in_html               #许使用网格，允许将相同或不同类型的块变成矩形
-
-  - attr_list                #图标
-  - pymdownx.emoji:          #表情
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  
-  - admonition               #可添加告诫，备注，提示，注意，警告，错误，详情，总结，提示框
-  - pymdownx.details         #可添加告诫，备注，提示，注意，警告，错误，详情，总结，提示框
-  - pymdownx.superfences     #可添加告诫，备注，提示，注意，警告，错误，详情，总结，提示框
-  
-  - pymdownx.critic          #配置支持键盘键、跟踪文档中的更改、定义下标和上标以及突出显示文本。将以下行添加到
-  - pymdownx.caret           #配置支持键盘键、跟踪文档中的更改、定义下标和上标以及突出显示文本。将以下行添加到
-  - pymdownx.keys            #配置支持键盘键、跟踪文档中的更改、定义下标和上标以及突出显示文本。将以下行添加到
-  - pymdownx.mark            #配置支持键盘键、跟踪文档中的更改、定义下标和上标以及突出显示文本。将以下行添加到
-  - pymdownx.tilde           #配置支持键盘键、跟踪文档中的更改、定义下标和上标以及突出显示文本。将以下行添加到
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tilde
