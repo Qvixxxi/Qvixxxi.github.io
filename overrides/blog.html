@@ -1,0 +1,64 @@
+{% extends "main.html" %}
+
+{% block container %}
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        {{ page.content }}
+      </header>
+
+      {% set featured = namespace(count = 0) %}
+      {% for post in posts %}
+        {% if post.meta.get("featured", false) %}
+          {% set featured.count = featured.count + 1 %}
+        {% endif %}
+      {% endfor %}
+
+      {% if featured.count %}
+        <section
+          class="qvi-featured"
+          data-qvi-featured
+          data-qvi-featured-count="{{ featured.count }}"
+          aria-label="主推文章"
+        >
+          <div class="qvi-featured__viewport">
+            {% set featured_slide = namespace(index = 0) %}
+            {% for post in posts %}
+              {% if post.meta.get("featured", false) %}
+                {% set featured_slide.index = featured_slide.index + 1 %}
+                {% set feature_index = featured_slide.index %}
+                {% set feature_count = featured.count %}
+                {% include "partials/featured-post.html" %}
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if featured.count > 1 %}
+            <div class="qvi-featured__controls">
+              <button type="button" data-qvi-featured-prev aria-label="上一篇主推文章">←</button>
+              <p aria-live="polite">
+                <strong data-qvi-featured-current>1</strong>
+                <span>/ {{ featured.count }}</span>
+              </p>
+              <button type="button" data-qvi-featured-next aria-label="下一篇主推文章">→</button>
+              <span class="qvi-featured__progress" aria-hidden="true"><i></i></span>
+            </div>
+          {% endif %}
+        </section>
+      {% endif %}
+
+      <section class="qvi-post-index" aria-labelledby="qvi-post-index-title">
+        <h2 id="qvi-post-index-title">全部文章</h2>
+        {% for post in posts %}
+          {% set is_featured_post = false %}
+          {% include "partials/post.html" %}
+        {% endfor %}
+      </section>
+      {% if pagination %}
+        {% block pagination %}
+          {% include "partials/pagination.html" %}
+        {% endblock %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

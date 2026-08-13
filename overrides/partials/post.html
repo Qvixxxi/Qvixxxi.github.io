@@ -1,0 +1,19 @@
+<article class="qvi-post{% if is_featured_post %} qvi-post--featured{% endif %}">
+  <div class="qvi-post__link">
+    <div class="qvi-post__date">
+      <time datetime="{{ post.config.date.created }}">
+        {{ post.config.date.created.strftime("%m.%d") }}
+      </time>
+      <span>{{ post.config.date.created.strftime("%Y") }}</span>
+    </div>
+    <div class="qvi-post__copy">
+      <div class="qvi-post__tags">
+        {% for category in post.categories %}
+          <span>{{ category.title }}</span>
+        {% endfor %}
+      </div>
+      <div class="qvi-post__excerpt">{{ post.content }}</div>
+    </div>
+    <a href="{{ post.url | url }}" class="qvi-post__arrow" aria-label="阅读文章">↗</a>
+  </div>
+</article>

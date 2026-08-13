@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block header %}
+  <aside class="qvi-rail" aria-label="主导航">
+    <div class="qvi-rail__brand">
+      <a href="{{ config.site_url | d(nav.homepage.url, true) | url }}" aria-label="返回首页">
+        <span class="qvi-rail__mark">
+          {% include ".icons/image2.svg" %}
+        </span>
+        <span class="qvi-rail__name">Qvi's<br>Journal</span>
+      </a>
+      <span class="qvi-rail__edition">ISSUE 04 · 2026</span>
+    </div>
+
+    <nav class="qvi-rail__nav">
+      <a href="{{ nav.homepage.url | url }}" class="{% if page.is_homepage %}is-active{% endif %}">
+        <span>01</span>
+        <strong>Home</strong>
+      </a>
+      {% for nav_item in nav %}
+        {% if nav_item.title == "Home" %}
+          {% set target = none %}
+        {% elif nav_item.url %}
+          {% set target = nav_item.url %}
+        {% elif nav_item.children %}
+          {% set target = nav_item.children[0].url %}
+        {% endif %}
+        {% if target %}
+          <a href="{{ target | url }}" class="{% if nav_item.active %}is-active{% endif %}">
+            <span>0{{ loop.index }}</span>
+            <strong>{{ nav_item.title }}</strong>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+    <div class="qvi-rail__tools">
+      <label for="__search" class="qvi-tool" tabindex="0">
+        {% include ".icons/material/magnify.svg" %}
+        <span>搜索</span>
+      </label>
+      <button type="button" class="qvi-theme-toggle" data-qvi-theme aria-label="切换明暗主题">
+        {% include ".icons/material/theme-light-dark.svg" %}
+      </button>
+    </div>
+
+    <p class="qvi-rail__note">Ideas, systems<br>and field notes.</p>
+  </aside>
+
+  <header class="qvi-mobile-head">
+    <a href="{{ nav.homepage.url | url }}" class="qvi-mobile-head__brand">QVI / JOURNAL</a>
+    <div class="qvi-mobile-head__tools">
+      <label for="__search" class="qvi-tool" aria-label="搜索">
+        {% include ".icons/material/magnify.svg" %}
+      </label>
+      <button type="button" class="qvi-theme-toggle" data-qvi-theme aria-label="切换明暗主题">
+        {% include ".icons/material/theme-light-dark.svg" %}
+      </button>
+    </div>
+    <nav class="qvi-mobile-nav" aria-label="移动端导航">
+      <a href="{{ nav.homepage.url | url }}" class="{% if page.is_homepage %}is-active{% endif %}">Home</a>
+      {% for nav_item in nav %}
+        {% if nav_item.title == "Home" %}
+          {% set target = none %}
+        {% elif nav_item.url %}
+          {% set target = nav_item.url %}
+        {% elif nav_item.children %}
+          {% set target = nav_item.children[0].url %}
+        {% endif %}
+        {% if target %}
+          <a href="{{ target | url }}" class="{% if nav_item.active %}is-active{% endif %}">
+            {{ nav_item.title }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </header>
+
+  {% include "partials/search.html" %}
+{% endblock %}
+
+{% block tabs %}{% endblock %}
+{% block site_nav %}{% endblock %}
+
+{% block footer %}
+  <footer class="qvi-footer">
+    <span>Qvi's Journal © 2026</span>
+    <span>Built with Markdown and curiosity.</span>
+    <a href="https://github.com/Qvidx" target="_blank" rel="noopener">GitHub ↗</a>
+  </footer>
+{% endblock %}
