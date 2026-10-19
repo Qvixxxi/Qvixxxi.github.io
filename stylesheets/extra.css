@@ -1903,6 +1903,7 @@ body {
 /* Selectable featured posts: editorial carousel */
 .qvi-featured {
   --qvi-featured-duration: 6500ms;
+  container: qvi-featured / inline-size;
   position: relative;
   margin: 2rem 0 3.75rem;
   border-top: 1px solid var(--qvi-line);
@@ -1917,7 +1918,7 @@ body {
 
 .qvi-featured__slide {
   display: grid;
-  grid-template-columns: minmax(6rem, 0.5fr) minmax(22rem, 1.5fr) minmax(17rem, 0.95fr);
+  grid-template-columns: minmax(5.5rem, 0.5fr) minmax(0, 1.5fr) minmax(0, 0.95fr);
   min-height: 15.5rem;
   padding: clamp(1.5rem, 2.6vw, 2.15rem);
   gap: clamp(1.25rem, 2.5vw, 2.5rem);
@@ -1934,6 +1935,7 @@ body {
 
 .qvi-featured__meta {
   display: flex;
+  min-width: 0;
   padding-right: clamp(1rem, 2vw, 2rem);
   flex-direction: column;
   justify-content: space-between;
@@ -1986,6 +1988,12 @@ body {
   font-size: clamp(1.85rem, 2.35vw, 2.25rem);
   line-height: 1.08;
   letter-spacing: -0.052em;
+  overflow-wrap: anywhere;
+}
+
+.qvi-featured__excerpt {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .qvi-featured__excerpt h2 a {
@@ -2036,8 +2044,8 @@ body {
 
 .qvi-flow__chain span {
   min-width: 0;
+  min-height: 2.4rem;
   padding: 0.8rem 0.45rem;
-  overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--qvi-blue) 42%, var(--qvi-line));
   border-radius: 10px;
   color: var(--qvi-ink);
@@ -2045,8 +2053,7 @@ body {
   font-size: 0.48rem;
   font-weight: 650;
   text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .qvi-flow__chain b {
@@ -2078,16 +2085,18 @@ body {
 }
 
 .qvi-flow__result p {
+  min-width: 0;
   margin: 0;
   color: var(--qvi-muted);
   font-family: "SFMono-Regular", Consolas, monospace;
   font-size: 0.46rem;
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .qvi-featured__controls {
   display: grid;
-  grid-template-columns: auto auto auto minmax(6rem, 1fr);
+  grid-template-columns: auto auto auto minmax(0, 1fr);
   padding: 0.8rem clamp(1.75rem, 3.2vw, 2.75rem);
   align-items: center;
   gap: 0.8rem;
@@ -2174,40 +2183,57 @@ body {
   }
 }
 
-@media (max-width: 68em) {
+/* Use the space left after the navigation rail, including browser zoom. */
+@container qvi-featured (max-width: 56rem) {
   .qvi-featured__slide {
-    grid-template-columns: 5.5rem minmax(17rem, 1.35fr) minmax(14rem, 0.65fr);
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    min-height: 0;
+    padding: 1.5rem;
     gap: 1.5rem;
   }
 
+  .qvi-featured__visual {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    padding: 1.25rem 0 0;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid var(--qvi-line);
+    border-left: 0;
+  }
+
   .qvi-featured__excerpt h2 {
-    font-size: clamp(1.7rem, 3vw, 2.1rem);
+    max-width: none;
+    font-size: clamp(1.7rem, 4cqi, 2.1rem);
   }
 }
 
-@media (max-width: 56.25em) {
-  .qvi-featured {
-    margin: 1.5rem 0 3rem;
-  }
-
+@container qvi-featured (max-width: 36rem) {
   .qvi-featured__viewport,
   .qvi-featured__slide {
     min-height: 0;
   }
 
   .qvi-featured__slide {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: 1.5rem 1rem;
     gap: 1.25rem;
   }
 
   .qvi-featured__meta {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 0 0 0.9rem;
-    align-items: end;
+    align-items: center;
+    gap: 0.65rem 1rem;
     border-right: 0;
     border-bottom: 1px solid var(--qvi-line);
+  }
+
+  .qvi-featured__meta > span {
+    margin-right: auto;
   }
 
   .qvi-featured__meta time {
@@ -2215,12 +2241,21 @@ body {
   }
 
   .qvi-featured__visual {
-    display: none;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .qvi-flow__chain {
+    gap: 0.3rem;
+  }
+
+  .qvi-flow__chain span {
+    padding: 0.7rem 0.2rem;
   }
 
   .qvi-featured__excerpt h2 {
     max-width: none;
-    font-size: clamp(1.75rem, 9vw, 2.45rem);
+    font-size: clamp(1.5rem, 6cqi, 2rem);
   }
 
   .qvi-featured__excerpt p {
@@ -2229,6 +2264,7 @@ body {
 
   .qvi-featured__controls {
     padding-inline: 1rem;
+    gap: 0.5rem;
   }
 }
 

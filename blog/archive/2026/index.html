@@ -19,8 +19,11 @@
         <link rel="next" href="../2025/">
       
       
+        
+      
+      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -28,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -52,7 +55,6 @@
     
       
 
-    
     
     
   </head>
@@ -363,7 +365,7 @@
   </div>
 
   <div class="qvi-featured__copy">
-    <div class="qvi-featured__excerpt"><h2 id="1panel-speedylease-502"><a class="toclink" href="../../2026/06/01/1panel-%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4%E6%98%BE%E7%A4%BA%E8%BF%90%E8%A1%8C%E4%B8%AD%E4%BD%86-speedylease-%E8%AE%BF%E9%97%AE-502-%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5/">1Panel 进程守护显示运行中，但 SpeedyLease 访问 502 怎么排查</a></h2>
+    <div class="qvi-featured__excerpt"><h2 id="1panel-502"><a class="toclink" href="../../2026/06/01/1panel-%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4%E6%98%BE%E7%A4%BA%E8%BF%90%E8%A1%8C%E4%B8%AD%E4%BD%86-speedylease-%E8%AE%BF%E9%97%AE-502-%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5/">1Panel 502 排障</a></h2>
 <p>把 SpeedyLease 放到服务器上以后，我遇到一个很典型的问题：1Panel 的 Supervisor 页面里进程显示“运行中”，启动命令看起来也没问题，但浏览器访问 <code>公网 IP:8000</code> 时却提示 502，页面打不开。</p>
 <p>这类问题不能只看“运行中”三个字。Supervisor 只能说明进程被拉起来了，不代表 Python 服务真的监听在目标端口，也不代表防火墙、安全组、反向代理都通了。</p>
 </div>
@@ -413,7 +415,7 @@
   </div>
 
   <div class="qvi-featured__copy">
-    <div class="qvi-featured__excerpt"><h2 id="1panel-speedylease"><a class="toclink" href="../../2026/05/26/%E7%94%A8-1panel-%E9%83%A8%E7%BD%B2-speedylease-%E9%A1%B9%E7%9B%AE/">用 1Panel 部署 SpeedyLease 项目</a></h2>
+    <div class="qvi-featured__excerpt"><h2 id="1panel-python"><a class="toclink" href="../../2026/05/26/%E7%94%A8-1panel-%E9%83%A8%E7%BD%B2-speedylease-%E9%A1%B9%E7%9B%AE/">1Panel 部署 Python 服务</a></h2>
 <p>这次把一个 Python 小项目放到服务器上，用 1Panel 做反向代理，再通过域名访问。过程不复杂，但里面有几个容易踩的小坑：监听地址、反向代理地址、DNS、备案和服务常驻。</p>
 </div>
     <a href="../../2026/05/26/%E7%94%A8-1panel-%E9%83%A8%E7%BD%B2-speedylease-%E9%A1%B9%E7%9B%AE/" class="qvi-featured__read">阅读文章 <span aria-hidden="true">↗</span></a>
@@ -471,7 +473,7 @@
           <span>微信小程序</span>
         
       </div>
-      <div class="qvi-post__excerpt"><h2 id="_1"><a class="toclink" href="../../2026/08/21/%E6%B3%B7%E8%85%BE%E4%BA%8C%E6%89%8B%E8%BD%A6%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%80%E6%9C%9F%E4%BB%8E%E8%BD%A6%E6%BA%90%E5%88%B0%E6%88%90%E4%BA%A4%E7%9C%9F%E6%AD%A3%E9%9C%80%E8%A6%81%E7%AE%A1%E4%BD%8F%E7%9A%84%E6%98%AF%E7%8A%B6%E6%80%81/">泷腾二手车小程序一期：从车源到成交，真正需要管住的是状态</a></h2>
+      <div class="qvi-post__excerpt"><h2 id="_1"><a class="toclink" href="../../2026/08/21/%E6%B3%B7%E8%85%BE%E4%BA%8C%E6%89%8B%E8%BD%A6%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%80%E6%9C%9F%E4%BB%8E%E8%BD%A6%E6%BA%90%E5%88%B0%E6%88%90%E4%BA%A4%E7%9C%9F%E6%AD%A3%E9%9C%80%E8%A6%81%E7%AE%A1%E4%BD%8F%E7%9A%84%E6%98%AF%E7%8A%B6%E6%80%81/">泷腾二手车小程序复盘</a></h2>
 <p>这不是一个面向 C 端的二手车商城，而是给门店员工和总部管理员使用的内部协同小程序。重点不是“展示多少辆车”，而是要解决一辆车被谁跟进、是否占用、最后有没有线下成交的问题。</p>
 <p>技术上采用：<strong>微信原生小程序 + 微信云托管 Express + MySQL + 云存储</strong>。下面不讲概念，直接记录几个最核心的实现。</p>
 </div>
@@ -497,7 +499,7 @@
           <span>排障</span>
         
       </div>
-      <div class="qvi-post__excerpt"><h2 id="1panel-speedylease-502"><a class="toclink" href="../../2026/06/01/1panel-%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4%E6%98%BE%E7%A4%BA%E8%BF%90%E8%A1%8C%E4%B8%AD%E4%BD%86-speedylease-%E8%AE%BF%E9%97%AE-502-%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5/">1Panel 进程守护显示运行中，但 SpeedyLease 访问 502 怎么排查</a></h2>
+      <div class="qvi-post__excerpt"><h2 id="1panel-502"><a class="toclink" href="../../2026/06/01/1panel-%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4%E6%98%BE%E7%A4%BA%E8%BF%90%E8%A1%8C%E4%B8%AD%E4%BD%86-speedylease-%E8%AE%BF%E9%97%AE-502-%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5/">1Panel 502 排障</a></h2>
 <p>把 SpeedyLease 放到服务器上以后，我遇到一个很典型的问题：1Panel 的 Supervisor 页面里进程显示“运行中”，启动命令看起来也没问题，但浏览器访问 <code>公网 IP:8000</code> 时却提示 502，页面打不开。</p>
 <p>这类问题不能只看“运行中”三个字。Supervisor 只能说明进程被拉起来了，不代表 Python 服务真的监听在目标端口，也不代表防火墙、安全组、反向代理都通了。</p>
 </div>
@@ -523,7 +525,7 @@
           <span>部署</span>
         
       </div>
-      <div class="qvi-post__excerpt"><h2 id="1panel-speedylease"><a class="toclink" href="../../2026/05/26/%E7%94%A8-1panel-%E9%83%A8%E7%BD%B2-speedylease-%E9%A1%B9%E7%9B%AE/">用 1Panel 部署 SpeedyLease 项目</a></h2>
+      <div class="qvi-post__excerpt"><h2 id="1panel-python"><a class="toclink" href="../../2026/05/26/%E7%94%A8-1panel-%E9%83%A8%E7%BD%B2-speedylease-%E9%A1%B9%E7%9B%AE/">1Panel 部署 Python 服务</a></h2>
 <p>这次把一个 Python 小项目放到服务器上，用 1Panel 做反向代理，再通过域名访问。过程不复杂，但里面有几个容易踩的小坑：监听地址、反向代理地址、DNS、备案和服务常驻。</p>
 </div>
     </div>
@@ -570,10 +572,13 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.sections", "navigation.expand", "navigation.path", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.sections", "navigation.expand", "navigation.path", "search.suggest", "search.highlight", "search.share", "navigation.indexes", "content.code.copy", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       
