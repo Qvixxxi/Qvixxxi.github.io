@@ -1,5 +1,6 @@
 ---
 date: 2026-06-01
+slug: 1panel-进程守护显示运行中但-speedylease-访问-502-怎么排查
 authors:
   - squidfunk
 categories:
@@ -15,7 +16,7 @@ featured_visual:
   tone: error
 ---
 
-# 1Panel 进程守护显示运行中，但 SpeedyLease 访问 502 怎么排查
+# 1Panel 502 排障
 
 把 SpeedyLease 放到服务器上以后，我遇到一个很典型的问题：1Panel 的 Supervisor 页面里进程显示“运行中”，启动命令看起来也没问题，但浏览器访问 `公网 IP:8000` 时却提示 502，页面打不开。
 

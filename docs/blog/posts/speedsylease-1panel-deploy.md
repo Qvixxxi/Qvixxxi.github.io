@@ -1,5 +1,6 @@
 ---
 date: 2026-05-26
+slug: 用-1panel-部署-speedylease-项目
 authors:
   - squidfunk
 categories:
@@ -15,7 +16,7 @@ featured_visual:
   tone: normal
 ---
 
-# 用 1Panel 部署 SpeedyLease 项目
+# 1Panel 部署 Python 服务
 
 这次把一个 Python 小项目放到服务器上，用 1Panel 做反向代理，再通过域名访问。过程不复杂，但里面有几个容易踩的小坑：监听地址、反向代理地址、DNS、备案和服务常驻。
 

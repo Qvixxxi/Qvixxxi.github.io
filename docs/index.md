@@ -43,7 +43,7 @@ comments: false
         <time datetime="2026-06-01">2026.06.01</time>
         <em>排障记录</em>
       </span>
-      <h3>1Panel 显示运行中，<br>访问 502 怎么排查</h3>
+      <h3>1Panel 502 排障</h3>
       <p>别只看“运行中”。从日志、端口监听、防火墙到反向代理，建立一套可靠的定位顺序。</p>
       <span class="home-story__action">阅读文章 ↗</span>
     </a>
@@ -54,7 +54,7 @@ comments: false
           <time datetime="2026-05-26">2026.05.26</time>
           <em>部署实践</em>
         </span>
-        <h3>用 1Panel 部署 SpeedyLease</h3>
+        <h3>1Panel 部署 Python 服务</h3>
         <p>从 Python 服务到 HTTPS，把上线链路一次理清。</p>
         <span aria-hidden="true">↗</span>
       </a>
